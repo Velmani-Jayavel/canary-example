@@ -1,13 +1,13 @@
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: apache-svc
-  namespace: apache-ns
+  name: mario-service
+  namespace: reactapp
 spec:
+  type: LoadBalancer
   selector:
-    app: apache
+    app: mario
   ports:
-  - name: http
-    port: 8080
-    targetPort: 80
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
