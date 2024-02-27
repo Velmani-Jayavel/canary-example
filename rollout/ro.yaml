@@ -12,6 +12,8 @@ spec:
       containers:
       - name: reactapp
         image: avaeusk8sacrpoc.azurecr.io/react-svc:32
+      imagePullSecrets:
+        - name: image-pull-secrets
   selector:
     matchLabels:
       app: reactapp
