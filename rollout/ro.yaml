@@ -13,7 +13,7 @@ spec:
       - name: reactapp
         image: avaeusk8sacrpoc.azurecr.io/react-svc:32
       imagePullSecrets:
-        - name: image-pull-secrets
+        - name: k8simagesecret
   selector:
     matchLabels:
       app: reactapp
