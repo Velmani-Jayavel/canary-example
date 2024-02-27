@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: reactapp
-        image: avaeusk8sacrpoc.azurecr.io/react-svc:32
+        image: avaeusk8sacrpoc.azurecr.io/react-svc:36
       imagePullSecrets:
         - name: k8simagesecret
   selector:
