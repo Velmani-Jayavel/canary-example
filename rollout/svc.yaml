@@ -6,7 +6,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: mario
+    app: reactapp
   ports:
     - protocol: TCP
       port: 3000
