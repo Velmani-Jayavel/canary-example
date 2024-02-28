@@ -17,9 +17,9 @@ spec:
   selector:
     matchLabels:
       app: reactapp
-  replicas: 5
+  replicas: 3
   strategy:
     canary:
       steps:
       - setWeight: 20
-      - pause: {}
+      - pause: { duration: 10 }
