@@ -25,6 +25,5 @@ spec:
           trafficRouting:
             type: SetCanaryScale
             weight: 20
-        - pause:
-            duration: 60s
+        - pause: {}
         - setWeight: 90
