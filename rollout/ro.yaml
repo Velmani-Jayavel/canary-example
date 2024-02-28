@@ -21,5 +21,9 @@ spec:
   strategy:
     canary:
       steps:
-      - setWeight: 20
+      # 1 canary pod (20% of spec.replicas)
+      - setCanaryScale:
+          weight: 20
+      # 90% of traffic to the 1 canary pod
+      - setWeight: 90
       - pause: { duration: 10m }
