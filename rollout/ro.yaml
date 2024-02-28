@@ -17,13 +17,14 @@ spec:
   selector:
     matchLabels:
       app: reactapp
+  spec:
   replicas: 3
   strategy:
     canary:
       steps:
-      # 1 canary pod (20% of spec.replicas)
+      # 1 canary pod (10% of spec.replicas)
       - setCanaryScale:
           weight: 20
       # 90% of traffic to the 1 canary pod
       - setWeight: 90
-      - pause: { duration: 10m }
+      - pause: {}
