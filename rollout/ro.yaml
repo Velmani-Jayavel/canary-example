@@ -4,6 +4,10 @@ metadata:
   name: react-ro
   namespace: reactapp
 spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: reactapp
   template:
     metadata:
       labels:
@@ -14,15 +18,13 @@ spec:
         image: avaeusk8sacrpoc.azurecr.io/react-svc:36
       imagePullSecrets:
         - name: k8simagesecret
-  selector:
-    matchLabels:
-      app: reactapp
-  replicas: 3
   strategy:
     canary:
       steps:
-      - setCanaryScale: 
-          weight: 20
-      # 90% of traffic to the 1 canary pod
-      - setWeight: 90
-      - pause: {}
+        - setWeight: 10
+          trafficRouting:
+            type: SetCanaryScale
+            weight: 20
+        - pause:
+            duration: 60s
+        - setWeight: 90
