@@ -21,9 +21,8 @@ spec:
   strategy:
     canary:
       steps:
-        - setWeight: 10
+        - setWeight: 20
           trafficRouting:
             type: SetCanaryScale
-            weight: 20
+            weight: 50
         - pause: {}
-        - setWeight: 90
