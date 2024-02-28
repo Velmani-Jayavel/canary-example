@@ -17,7 +17,6 @@ spec:
   selector:
     matchLabels:
       app: reactapp
-spec:
   replicas: 3
   strategy:
     canary:
